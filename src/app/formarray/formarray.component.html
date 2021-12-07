@@ -1,0 +1,62 @@
+<!-- <div class="container text-center">
+  <div>
+    <p>Welcome to the formArray</p>
+  </div>
+  <div [formGroup]="userForm">
+    <div formArrayName="userList">
+      <div formGroupName="i">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="userName"
+          placeholder="Enter your Name"
+        />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="userDetails"
+          placeholder="Enter your Details"
+        />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="userNumber"
+          placeholder="Enter your Number"
+        />
+      </div>
+    </div>
+  </div>
+  <button type="button" (click)="addUsers(); button()">Add Users</button>
+</div> -->
+<!-- *ngFor="let user of userForm.get('userList').controls; let i = index"  [formGroupName]="i" -->
+
+<div class="container text-center">
+  <div>
+    <p>Welcome to the formArray</p>
+  </div>
+  <div [formGroup]="userForm">
+    <div formArrayName="userList">
+      <div>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="userName"
+          placeholder="Enter your Name"
+        />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="userDetails"
+          placeholder="Enter your Details"
+        />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="userNumber"
+          placeholder="Enter your Number"
+        />
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn">Add Users</button>
+</div>
