@@ -1,10 +1,13 @@
-<!-- <div class="container text-center">
+<div class="container text-center">
   <div>
     <p>Welcome to the formArray</p>
   </div>
   <div [formGroup]="userForm">
-    <div formArrayName="userList">
-      <div formGroupName="i">
+    <div
+      formArrayName="userList"
+      *ngFor="let user of userFormlist.controls; let i = index"
+    >
+      <div [formGroupName]="i">
         <input
           type="text"
           class="form-control"
@@ -27,16 +30,19 @@
     </div>
   </div>
   <button type="button" (click)="addUsers(); button()">Add Users</button>
-</div> -->
+</div>
 <!-- *ngFor="let user of userForm.get('userList').controls; let i = index"  [formGroupName]="i" -->
-
+<!-- 
 <div class="container text-center">
   <div>
     <p>Welcome to the formArray</p>
   </div>
   <div [formGroup]="userForm">
-    <div formArrayName="userList">
-      <div>
+    <div
+      formArrayName="userList"
+      *ngFor="let user of userFormlist.controls; let i = index"
+    >
+      <div formControlName="i">
         <input
           type="text"
           class="form-control"
@@ -59,4 +65,4 @@
     </div>
   </div>
   <button type="button" class="btn">Add Users</button>
-</div>
+</div> -->

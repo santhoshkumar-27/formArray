@@ -14,32 +14,35 @@ export class FormarrayComponent implements OnInit {
   ngOnInit(): void {
     this.userForm = new FormGroup({
       userList: new FormArray([
-        new FormGroup({
-          'userName': new FormControl(''),
-          'userDetails': new FormControl(''),
-          'userNumber': new FormControl('')
-        }),
-        new FormGroup({
-          'userName': new FormControl(''),
-          'userDetails': new FormControl(''),
-          'userNumber': new FormControl('')
-        })
+        // new FormGroup({
+        //   'userName': new FormControl(''),
+        //   'userDetails': new FormControl(''),
+        //   'userNumber': new FormControl('')
+        // }),
+        // new FormGroup({
+        //   'userName': new FormControl(''),
+        //   'userDetails': new FormControl(''),
+        //   'userNumber': new FormControl('')
+        // })
       ]),
     })
   }
+  get userFormlist() {
+    return this.userForm.get('userList') as FormArray
+  }
   // this is function returns a formGroup with collection of formcontrols
-  // createUserList(): FormGroup {
-  //   return this.fb.group({
-  //     userName: '',
-  //     userDetails: '',
-  //     userNumber: ''
-  //   })
-  // }
-  // addUsers(): void {
-  //   this.userList = this.userForm.get('userList') as FormArray
-  //   this.userList.push(this.createUserList())
-  // }
-  // button(): void {
-  //   console.log(this.userForm)
-  // }
+  createUserList(): FormGroup {
+    return this.fb.group({
+      userName: '',
+      userDetails: '',
+      userNumber: ''
+    })
+  }
+  addUsers(): void {
+    this.userList = this.userForm.get('userList') as FormArray
+    this.userList.push(this.createUserList())
+  }
+  button(): void {
+    console.log(this.userForm)
+  }
 }
